@@ -14,7 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::resource('ip', 'IpsController');
+Route::get('ip/{ip}', [
+        'uses' => 'IpsController@create',
+        'as' => 'admin.ip.create'
+    ]);
+Route::get('ip/{id}/destroy', [
+        'uses' => 'IpsController@destroy',
+        'as' => 'admin.ip.destroy'
+    ]);
 /*
 |--------------------------------------------------------------------------
 | Application Routes

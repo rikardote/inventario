@@ -5,8 +5,8 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Inventario de IP's</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('plugins/toastr/css/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
 </head>
@@ -29,6 +29,7 @@
 	    <div class="row">
 	        <div class="col-xl-12">
 	            <article>
+	            	<div id="alert"> @include('flash::message')</div>
 					@yield('content')
 	            </article>
 	        </div>
@@ -42,9 +43,13 @@
 	    </div>
 	</footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="{{ asset('plugins/jquery/js/jquery.js') }}"></script>
+	<script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
 	<script src="{{ asset('js/script.js') }}"></script>
-
+	<script src="{{ asset('plugins/toastr/js/toastr.min.js') }}"></script>
+	<script>
+	   $('#alert').delay(2000).fadeOut(800)
+	</script>
+ 	{!! Toastr::render() !!}
 </body>
 </html>

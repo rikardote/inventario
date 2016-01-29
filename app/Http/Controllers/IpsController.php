@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 
 use App\Ip;
 use App\Http\Requests\IpRequest;
+use Toastr;
+use Laracasts\Flash\Flash;
 
 class IpsController extends Controller
 {
@@ -43,6 +45,7 @@ class IpsController extends Controller
     	$datos = new Ip($request->all());	
     	$datos->save();
 
+		Toastr::success('Ip Asignada Correctamente');
     	return redirect()->route('ip.index');
     }
 
@@ -51,7 +54,8 @@ class IpsController extends Controller
 		$dato = Ip::find($id);
         $dato->fill($request->all());
         $dato->save();
-
+		//Toastr::success('Ip Actualizada Correctamente');
+		Flash::success('Ip Actualizada Correctamente');
         return redirect()->route('ip.index');
     }
 	public function destroy($id)
@@ -59,7 +63,7 @@ class IpsController extends Controller
         $dato = Ip::find($id);
 
         $dato->delete();
-       
+      	Toastr::error('Ip Liberada Correctamente');
         return redirect()->route('ip.index');
     } 
 

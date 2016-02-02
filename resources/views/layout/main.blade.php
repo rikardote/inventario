@@ -18,16 +18,12 @@
 	    <div class="container">
 	        <h1>INVENTARIO DE IP'S</h1>
 	        <p>Elaborado Por: Ricardo Fuentes</p>
-
-
 	    </div>
-
-
 	</header>
 
 	<div class="container">
 	    <div class="row">
-	        <div class="col-xl-12">
+	        <div class="col-xl-8">
 	            <article>
 	            	<div id="alert"> @include('flash::message')</div>
 					@yield('content')

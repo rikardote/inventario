@@ -1,4 +1,3 @@
-
 @import url('http://fonts.googleapis.com/css?family=Arvo:400');
 @import url('http://fonts.googleapis.com/css?family=Dosis');
 
@@ -23,3 +22,20 @@ article {
 
 p.created_at { margin: 0; padding: 0; }
 article h2 { margin: 0 0 10px 0; padding: 0; }
+.modal-content {
+  background-color: #0480be;
+  color: navy;
+}
+.modal-body {
+  background-color: #fff;
+
+}
+.panelColor{
+  color: white;
+}
+.panelColorGreen{
+  color: #337AB7;
+}
+.panelColorRed{
+  color: #B1103C;
+}

@@ -1,5 +1,5 @@
 <div class="form-group">
-	{!! Form::label('ip', 'Ip') !!}
+	{!! Form::label('ip', 'IP') !!}
 	
 	{!! Form::text('ip', $ip, [
 		'class' => 'form-control',
@@ -23,7 +23,9 @@
 		'required']) 
 	!!}
 </div>
+
 <div class="form-group">
+	{!! Form::label('ubicacion_id', 'Ubicacion') !!}
 	<select name="ubicacion_id" class="form-control">
 		<option value="1">Sotano</option>
 		<option value="2">Bunker</option>
